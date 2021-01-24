@@ -5,5 +5,6 @@ from . import views
 app_name="biblioteca_app"
 
 urlpatterns = [
-    path('autores', views.ListaAutores.as_view(), name="lista-autores")
+    path('', views.ListaAutores.as_view(), name="lista-autores"),
+    path('libros-autor/<pk>/por-autor', views.ListaLibrosAutores.as_view(), name="lista-libros"),
 ]

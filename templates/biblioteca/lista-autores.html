@@ -7,15 +7,17 @@
   <body>
     <h1>Autores registrados</h1>
     <table border=1>
-      <th>Nombres</th>
+      <th>ID</th>
+      <th>Nombre</th>
       <th>Nacionalidad</th>
       <th>Accion</th>
       <tbody>
         {% for a in autores %}
         <tr>
+          <td>{{ a.id }}</td>
           <td>{{ a.nombre }}</td>
           <td>{{ a.nacionalidad }}</td>
-          <td><a href="#">VER</a></td>
+          <td><a href="{% url 'biblioteca_app:lista-libros' a.id %}">Ver libros</a></td>
         </tr>
         {% endfor %}
       </tbody>
